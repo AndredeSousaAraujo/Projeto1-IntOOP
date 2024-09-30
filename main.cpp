@@ -3,6 +3,8 @@
 using namespace std;
 
 int main(){
+    int ale = rand();
+    cout << ale << endl;
     Componente vent("Ventilador", false, false, 10);
 
     cout << "Valor: " << vent.getValor() << endl;

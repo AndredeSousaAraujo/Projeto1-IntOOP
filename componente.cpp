@@ -5,8 +5,8 @@ class Componente{
     private:
         bool ligado;
         bool conectado;
-        int valor;
         string nome; 
+        int valor;
 
     public:
         Componente(string nome, bool ligado, bool conectado, int valor):
@@ -35,7 +35,7 @@ class Componente{
             //cout << "Desconectado" << endl;
         }
 
-        int getValor(){
+        virtual int getValor(){
             return valor;
         }
 };
