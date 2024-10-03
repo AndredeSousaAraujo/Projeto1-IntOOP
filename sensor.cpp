@@ -15,5 +15,5 @@ class Sensor: public Componente{
         this -> valor = rand() % 256;
         cout << "0 a 255 = "<< valor << endl;
         return this -> valor;
-    }        
+    }        //323232
 };

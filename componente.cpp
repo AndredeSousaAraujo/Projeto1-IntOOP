@@ -41,5 +41,5 @@ class Componente{
 
         virtual int getValor(){
             return valor;
-        }
+        }//3232
 };

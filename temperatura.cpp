@@ -24,7 +24,7 @@ class Temperatura: public Sensor{
             float temperaturaK = getTemperaturaC() + 273;
             cout << "temperatura em K: " <<  temperaturaK << endl; 
             return temperaturaK;
-        }
+        }//323232
 
         
 

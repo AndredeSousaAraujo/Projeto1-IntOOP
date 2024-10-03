@@ -15,7 +15,7 @@ int main(){
     Luminosidade l("Lum1", false, false, 10);
     t.getTemperaturaF();
     u.getUmidadeRelativa();
-    l.estaClaro();
+    l.estaClaro();//3232
 
 
 
