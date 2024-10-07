@@ -24,7 +24,7 @@ class Luminosidade: public Sensor{
             cout << "Esta claro" << endl;
             return true;
             }
-        cout << "Esta escuro" << endl;    //3232
+        cout << "Esta escuro" << endl;  
         return false;    
         }
         
