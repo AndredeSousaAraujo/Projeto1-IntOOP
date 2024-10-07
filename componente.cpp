@@ -1,12 +1,16 @@
 #include <iostream>
+#pragma once
 using namespace std;
 
 class Componente{
+    protected:
+        int valor;
+
     private:
         bool ligado;
         bool conectado;
         string nome; 
-        int valor;
+        
 
     public:
         Componente(string nome, bool ligado, bool conectado, int valor):
@@ -37,5 +41,5 @@ class Componente{
 
         virtual int getValor(){
             return valor;
-        }
+        }//3232
 };
