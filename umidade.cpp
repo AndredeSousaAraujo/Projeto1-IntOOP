@@ -1,6 +1,7 @@
 #include <iostream>
 #include "sensor.cpp"
 using namespace std;
+#pragma once
 
 class Umidade: public Sensor{
     public:

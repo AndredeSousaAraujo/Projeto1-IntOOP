@@ -1,6 +1,7 @@
 #include <iostream>
 #include "atuador.cpp"
 using namespace std;
+#pragma once
 
 class Umidificador : public Atuador{
     public:

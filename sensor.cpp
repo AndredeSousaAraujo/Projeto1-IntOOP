@@ -13,7 +13,7 @@ class Sensor: public Componente{
 
     virtual int getValor(){
         this -> valor = rand() % 256;
-        cout << "0 a 255 = "<< valor << endl;
+        //cout << "0 a 255 = "<< valor << endl;
         return this -> valor;
     }        
 };

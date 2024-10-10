@@ -10,6 +10,7 @@
 #include "desumidificador.cpp"
 #include "lampada.cpp"
 #include "sala.cpp"
+#pragma once
 using namespace std;
 
 int main(){
@@ -38,11 +39,15 @@ int main(){
     Lampada lam2("Lamp2", false, false, 10);
     Lampada lam3("Lamp3", false, false, 10);
 
-    Sensor* sensores[5] = {&t1, &u1, &l1};
-    Atuador* atuadores[5] = {&v1, &um1, &d1, &lam1};
+    
 
-    Sala s1(sensores, atuadores);
-    //s1.sensores[0]-> getTemperaturaC();
+    Sala s1(&t1, &l1, &u1, &v1, &lam1, &um1, &d1);
+    Sala s2(&t2, &l2, &u2, &v2, &lam2, &um2, &d2);
+
+    s1.atualizarSensores();
+
+    //((Temperatura*)s1.sensores[0]) -> getTemperaturaC();
+    //s1.t1.getTemperaturaC();
     // t1.getTemperaturaK();
     // u1.getUmidadeRelativa();
     // l1.estaClaro();

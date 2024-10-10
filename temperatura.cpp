@@ -1,6 +1,7 @@
 #include <iostream>
 #include "sensor.cpp"
 using namespace std;
+#pragma once
 
 class Temperatura: public Sensor{
     public:
@@ -9,20 +10,17 @@ class Temperatura: public Sensor{
             Sensor(nome, ligado, conectado, valor){}
 
         float getTemperaturaC(){
-            float temperaturaC = getValor() / 2.55;
-            cout << "temperatura em C: " <<  temperaturaC << endl; 
+            float temperaturaC = getValor() / 2.55; 
             return temperaturaC;
         }
 
         float getTemperaturaF(){
             float temperaturaF = getTemperaturaC()*1.8 + 32;
-            cout << "temperatura em F: " <<  temperaturaF << endl; 
             return temperaturaF;
         }
 
         float getTemperaturaK(){
             float temperaturaK = getTemperaturaC() + 273;
-            cout << "temperatura em K: " <<  temperaturaK << endl; 
             return temperaturaK;
         }
 
