@@ -15,6 +15,7 @@ class Lampada : public Atuador{
                 return 0;
             }
             this -> valor = valor;
+            cout << "Brilho da lampada definido para: "<< this->valor << endl;
             return 1;
     }        
 };

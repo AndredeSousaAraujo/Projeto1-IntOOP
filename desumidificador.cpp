@@ -10,11 +10,12 @@ class Desumidificador : public Atuador{
             }
 
         bool setConfiguracao(int valor){
-            if(valor < 0 && valor > 3){
+            if(valor < 0 && valor > 1){
                 cout << "Erro ao setar config do desumidificador" << endl;
                 return 0;
             }
             this -> valor = valor;
+            cout << "Configuração do desumidificador definido para: "<< this->valor << endl;
             return 1;
     }        
 };

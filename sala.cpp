@@ -61,26 +61,42 @@ class Sala{
         
         void atualizarAtuadores(){
             if(val_temp_C>40){
-                cout << ((Ventilador*)atuadores[0]) -> setVelocidade(3) << endl;
+                ((Ventilador*)atuadores[0]) -> setVelocidade(3);
             }
             else if(val_temp_C>30){
-                cout << ((Ventilador*)atuadores[0]) -> setVelocidade(2) << endl;
+                ((Ventilador*)atuadores[0]) -> setVelocidade(2);
             }
             else if(val_temp_C>20){
-                cout << ((Ventilador*)atuadores[0]) -> setVelocidade(1) << endl;
+                ((Ventilador*)atuadores[0]) -> setVelocidade(1);
             }
             else{
-                cout << ((Ventilador*)atuadores[0]) -> setVelocidade(0) << endl;
+                ((Ventilador*)atuadores[0]) -> setVelocidade(0);
             }
 
             if(val_lum>80){
-                cout << ((Ventilador*)atuadores[0]) -> setVelocidade(3) << endl;
+                ((Lampada*)atuadores[1]) -> setBrilho(0);
+            }
+            else if(val_lum>50){
+                ((Lampada*)atuadores[1]) -> setBrilho(1);
             }
             else if(val_lum>20){
-                cout << ((Ventilador*)atuadores[0]) -> setVelocidade(1) << endl;
+                ((Lampada*)atuadores[1]) -> setBrilho(2);
             }
             else{
-                cout << ((Ventilador*)atuadores[0]) -> setVelocidade(0) << endl;
+                ((Lampada*)atuadores[1]) -> setBrilho(3);
+            }
+
+            if(val_umid>0 && val_umid<33){
+                ((Umidificador*)atuadores[2]) -> setConfiguracao(1);
+                ((Desumidificador*)atuadores[3]) -> setConfiguracao(0);
+            }
+            else if (val_umid >= 33 && val_umid < 66){
+                ((Umidificador*)atuadores[2]) -> setConfiguracao(0);
+                ((Desumidificador*)atuadores[3]) -> setConfiguracao(0);
+            }
+            else{
+                ((Umidificador*)atuadores[2]) -> setConfiguracao(0);
+                ((Desumidificador*)atuadores[3]) -> setConfiguracao(1);
             }
 
         }
