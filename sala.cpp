@@ -29,17 +29,59 @@ class Sala{
 
         }
 
+        float val_temp_C;
+        float val_temp_K;
+        float val_temp_F;
+        float val_lum;
+        float val_umid;
 
         void atualizarSensores(){
-            cout << "Temperatura em C: " << ((Temperatura*)sensores[0]) -> getTemperaturaC() << endl;
-            cout << "Temperatura em F: " << ((Temperatura*)sensores[0]) -> getTemperaturaF() << endl;
-            cout << "Temperatura em K: " << ((Temperatura*)sensores[0]) -> getTemperaturaK() << endl;
-            cout << "Limiar de Claridade: " << ((Luminosidade*)sensores[1]) -> getLimiarClaridade() << endl;
-            ((Luminosidade*)sensores[1]) -> estaClaro();
-            cout << "Umidade Relativa: " << ((Umidade*)sensores[2]) -> getUmidadeRelativa() << endl;
-        }
+            float val_temp_C = ((Temperatura*)sensores[0]) -> getTemperaturaC();
+            this -> val_temp_C = val_temp_C;
 
+            float val_temp_F = ((Temperatura*)sensores[0]) -> getTemperaturaF();
+            this -> val_temp_F = val_temp_F;
+
+            float val_temp_K = ((Temperatura*)sensores[0]) -> getTemperaturaK();
+            this -> val_temp_K = val_temp_K;
+
+            float val_lum = ((Luminosidade*)sensores[1]) -> getLimiarClaridade();
+            this -> val_lum = val_lum;
+
+            float val_umid = ((Umidade*)sensores[2]) -> getUmidadeRelativa();
+            this -> val_umid = val_umid;
+
+            cout << "Temperatura em C: " << val_temp_C << endl;
+            cout << "Temperatura em F: " << val_temp_F << endl;
+            cout << "Temperatura em K: " << val_temp_K << endl;
+            cout << "Limiar de Claridade: " << val_lum << endl;
+            ((Luminosidade*)sensores[1]) -> estaClaro();
+            cout << "Umidade Relativa: " << val_umid << "%"<< endl;
+        }
+        
         void atualizarAtuadores(){
+            if(val_temp_C>40){
+                cout << ((Ventilador*)atuadores[0]) -> setVelocidade(3) << endl;
+            }
+            else if(val_temp_C>30){
+                cout << ((Ventilador*)atuadores[0]) -> setVelocidade(2) << endl;
+            }
+            else if(val_temp_C>20){
+                cout << ((Ventilador*)atuadores[0]) -> setVelocidade(1) << endl;
+            }
+            else{
+                cout << ((Ventilador*)atuadores[0]) -> setVelocidade(0) << endl;
+            }
+
+            if(val_lum>80){
+                cout << ((Ventilador*)atuadores[0]) -> setVelocidade(3) << endl;
+            }
+            else if(val_lum>20){
+                cout << ((Ventilador*)atuadores[0]) -> setVelocidade(1) << endl;
+            }
+            else{
+                cout << ((Ventilador*)atuadores[0]) -> setVelocidade(0) << endl;
+            }
 
         }
 

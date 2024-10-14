@@ -11,7 +11,6 @@ class Umidade: public Sensor{
 
         float getUmidadeRelativa(){
             int umidade = getValor() / 2.55;
-            cout << "Umidade: " <<  umidade << "%" << endl; 
             return umidade; 
             
         }

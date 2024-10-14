@@ -15,6 +15,7 @@ class Ventilador : public Atuador{
             return 0;
         }
         this -> valor = valor;
+        cout << "Velocidade definida para: " << this -> valor << endl;
         return 1;
     }        
 };

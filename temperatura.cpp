@@ -10,7 +10,7 @@ class Temperatura: public Sensor{
             Sensor(nome, ligado, conectado, valor){}
 
         float getTemperaturaC(){
-            float temperaturaC = getValor() / 2.55; 
+            float temperaturaC = getValor() / 4.25; 
             return temperaturaC;
         }
 

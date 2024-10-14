@@ -45,6 +45,7 @@ int main(){
     Sala s2(&t2, &l2, &u2, &v2, &lam2, &um2, &d2);
 
     s1.atualizarSensores();
+    s1.atualizarAtuadores();
 
     //((Temperatura*)s1.sensores[0]) -> getTemperaturaC();
     //s1.t1.getTemperaturaC();

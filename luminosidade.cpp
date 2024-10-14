@@ -5,7 +5,7 @@ using namespace std;
 
 class Luminosidade: public Sensor{
     private:
-        int limiarClaridade = 150;
+        int limiarClaridade = 50;
     public:
 
         Luminosidade(string nome, bool ligado, bool conectado, int valor):
@@ -20,11 +20,15 @@ class Luminosidade: public Sensor{
             return limiarClaridade;
         }
 
+        int luminosidade = getValor()/2.55;
+
         bool estaClaro(){
-        if(getValor()>limiarClaridade){
+        if(luminosidade>limiarClaridade){
+            cout << "Luminosidade: " << luminosidade << endl;
             cout << "Esta claro" << endl;
             return true;
             }
+        cout << "Luminosidade: " << luminosidade << endl;
         cout << "Esta escuro" << endl;  
         return false;    
         }
