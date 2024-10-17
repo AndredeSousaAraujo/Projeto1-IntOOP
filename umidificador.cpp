@@ -14,6 +14,14 @@ class Umidificador : public Atuador{
                 cout << "Erro ao setar config do umidificador" << endl;
                 return 0;
             }
+            else if(valor == 0 && ligado == true){
+            desligar();
+            cout << "O umidificador foi desligado" << endl;
+            }
+            else if(valor != 0 && ligado == false){
+                ligar();
+                cout << "O umidificador foi ligado" << endl;
+            }
             this -> valor = valor;
             cout << "Configuração do umidificador definido para: "<< this->valor << endl;
             return 1;

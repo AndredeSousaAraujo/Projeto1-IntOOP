@@ -38,21 +38,38 @@ int main(){
     Lampada lam1("Lamp1", false, false, 10);
     Lampada lam2("Lamp2", false, false, 10);
     Lampada lam3("Lamp3", false, false, 10);
-
     
 
     Sala s1(&t1, &l1, &u1, &v1, &lam1, &um1, &d1);
     Sala s2(&t2, &l2, &u2, &v2, &lam2, &um2, &d2);
+    Sala s3(&t3, &l3, &u3, &v3, &lam3, &um3, &d3);
 
+
+    for (int i = 0; i < 1440; i++) {
+  
+    cout << "Loop " << i+1 << endl << endl;
+
+    cout << "Sala 1" << endl;
     s1.atualizarSensores();
     s1.atualizarAtuadores();
+    cout << "------------------------------------------------------------ " << endl;
+    cout << "------------------------------------------------------------ " << endl << endl;
 
-    //((Temperatura*)s1.sensores[0]) -> getTemperaturaC();
-    //s1.t1.getTemperaturaC();
-    // t1.getTemperaturaK();
-    // u1.getUmidadeRelativa();
-    // l1.estaClaro();
-    // d1.setValor(10);
+    cout << "Sala 2" << endl;
+    s2.atualizarSensores();
+    s2.atualizarAtuadores();
+    cout << "------------------------------------------------------------ " << endl;
+    cout << "------------------------------------------------------------ " << endl << endl;
+
+    cout << "Sala 3" << endl;
+    s3.atualizarSensores();
+    s3.atualizarAtuadores();
+    cout << "------------------------------------------------------------ " << endl;
+    cout << "------------------------------------------------------------ " << endl << endl;
+
+    }
+
+    
 
 
 

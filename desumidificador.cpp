@@ -14,6 +14,14 @@ class Desumidificador : public Atuador{
                 cout << "Erro ao setar config do desumidificador" << endl;
                 return 0;
             }
+            else if(valor == 0 && ligado == true){
+            desligar();
+            cout << "O desumidificador foi desligado" << endl;
+            }
+            else if(valor != 0 && ligado == false){
+                ligar();
+                cout << "O desumidificador foi ligado" << endl;
+            }
             this -> valor = valor;
             cout << "Configuração do desumidificador definido para: "<< this->valor << endl;
             return 1;

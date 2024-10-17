@@ -53,50 +53,63 @@ class Sala{
 
             cout << "Temperatura em C: " << val_temp_C << endl;
             cout << "Temperatura em F: " << val_temp_F << endl;
-            cout << "Temperatura em K: " << val_temp_K << endl;
+            cout << "Temperatura em K: " << val_temp_K << endl << endl;
             cout << "Limiar de Claridade: " << val_lum << endl;
             ((Luminosidade*)sensores[1]) -> estaClaro();
-            cout << "Umidade Relativa: " << val_umid << "%"<< endl;
+            cout << endl;
+            cout << "Umidade Relativa: " << val_umid << "%"<< endl << endl;
+            cout << "------------------------------------------------------------ " << endl << endl;
         }
         
         void atualizarAtuadores(){
             if(val_temp_C>40){
                 ((Ventilador*)atuadores[0]) -> setVelocidade(3);
+                cout << endl;
             }
             else if(val_temp_C>30){
                 ((Ventilador*)atuadores[0]) -> setVelocidade(2);
+                cout << endl;
             }
             else if(val_temp_C>20){
                 ((Ventilador*)atuadores[0]) -> setVelocidade(1);
+                cout << endl;
             }
             else{
                 ((Ventilador*)atuadores[0]) -> setVelocidade(0);
+                cout << endl;
             }
 
             if(val_lum>80){
                 ((Lampada*)atuadores[1]) -> setBrilho(0);
+                cout << endl;
             }
             else if(val_lum>50){
                 ((Lampada*)atuadores[1]) -> setBrilho(1);
+                cout << endl;
             }
             else if(val_lum>20){
                 ((Lampada*)atuadores[1]) -> setBrilho(2);
+                cout << endl;
             }
             else{
                 ((Lampada*)atuadores[1]) -> setBrilho(3);
+                cout << endl;
             }
 
             if(val_umid>0 && val_umid<33){
                 ((Umidificador*)atuadores[2]) -> setConfiguracao(1);
                 ((Desumidificador*)atuadores[3]) -> setConfiguracao(0);
+                cout << endl;
             }
             else if (val_umid >= 33 && val_umid < 66){
                 ((Umidificador*)atuadores[2]) -> setConfiguracao(0);
                 ((Desumidificador*)atuadores[3]) -> setConfiguracao(0);
+                cout << endl;
             }
             else{
                 ((Umidificador*)atuadores[2]) -> setConfiguracao(0);
                 ((Desumidificador*)atuadores[3]) -> setConfiguracao(1);
+                cout << endl;
             }
 
         }
